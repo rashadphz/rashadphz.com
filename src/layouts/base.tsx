@@ -1,3 +1,5 @@
+import Footer from "@/components/footer";
+
 export default function Base({
   children,
 }: {
@@ -5,11 +7,13 @@ export default function Base({
 }) {
   return (
     <>
-      <div className="mx-auto max-w-xl p-4">
+      <div className="mx-auto max-w-2xl p-4">
         <header className="flex justify-between items-center h-8 py-8">
           <h1>rashadphz</h1>
         </header>
-        {children}
+        <div>{children}</div>
+        <div className="mt-8" />
+        <Footer />
       </div>
     </>
   );

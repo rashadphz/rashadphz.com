@@ -7,12 +7,12 @@ export default function Home() {
       <Base>
         <main className="prose dark:prose-invert">
           <p>
-            Hi 👋🏿, I'm Rashad. I'm an honors CS student at UT Austin.
-            I'm interested in <strong>backend development</strong> and
+            Hi 👋🏿, I&apos;m <strong>Rashad</strong>. I&apos;m an honors CS student at <strong>UT Austin</strong>.
+            I&apos;m interested in <strong>backend development</strong> and
             infra.
           </p>
           <p>
-            I've interned at <a href="https://stripe.com">Stripe</a>,{" "}
+            I&apos;ve interned at <a href="https://stripe.com">Stripe</a>,{" "}
             <a href="https://meta.app">Meta</a>, and{" "}
             <a href="https://yext.com">Yext</a>.
           </p>
