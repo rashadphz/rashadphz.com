@@ -1,10 +1,6 @@
 import Footer from "@/components/footer";
 
-export default function Base({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function Base({ children }: { children: React.ReactNode }) {
   return (
     <>
       <div className="mx-auto max-w-2xl p-4">

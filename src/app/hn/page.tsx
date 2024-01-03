@@ -77,17 +77,22 @@ export default async function HackerNews() {
   return (
     <Base>
       <div className="flex flex-col">
-        <h2 className="text-2xl font-bold mb-4">Hacker News</h2>
-        <div className="flex flex-col space-y-2">
+        <h2 className="text-2xl font-bold mb-8">Liked Hacker News Posts</h2>
+        <ul className="space-y-6">
           {posts.map((post) => (
-            <div key={post.id} className="flex flex-col space-y-1">
+            <li key={post.id} className="flex flex-col space-y-1">
               <Link href={post.url}>{post.title}</Link>
               <div className="text-sm text-muted-foreground">
-                {post.points} points · {post.comments} comments
+                {post.points} points · {post.comments} comments ·{" "}
+                {post.createdAt.toLocaleDateString("en-US", {
+                  month: "short",
+                  day: "numeric",
+                  year: "numeric",
+                })}
               </div>
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </Base>
   );

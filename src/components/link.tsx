@@ -9,15 +9,13 @@ interface LinkProps {
 const Link: FC<LinkProps> = ({ href, children }) => {
   const isExternal = href.startsWith("http");
   return (
-    <div className="prose dark:prose-invert">
-      <NextLink
-        href={href}
-        className=""
-        target={isExternal ? "_blank" : undefined}
-      >
-        {children}
-      </NextLink>
-    </div>
+    <NextLink
+      href={href}
+      className="underline underline-offset-4 decoration-muted-foreground/50 text-foreground font-medium"
+      target={isExternal ? "_blank" : undefined}
+    >
+      {children}
+    </NextLink>
   );
 };
 
