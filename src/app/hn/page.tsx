@@ -40,6 +40,7 @@ function parsePost(element: Element, $: CheerioAPI): HackerNewsPost {
 }
 
 async function getHackerNewsLikes(): Promise<HackerNewsPost[] | null> {
+  const DAY = 60 * 60 * 24;
   try {
     const response = await fetch(
       "https://news.ycombinator.com/upvoted?id=rashadphil",
@@ -48,7 +49,7 @@ async function getHackerNewsLikes(): Promise<HackerNewsPost[] | null> {
           Cookie: process.env.HN_COOKIE ?? "",
         },
         next: {
-          revalidate: 60,
+          revalidate: DAY,
         },
       }
     );
