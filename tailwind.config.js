@@ -18,8 +18,18 @@ module.exports = {
     },
     extend: {
       typography: {
-        invert: {
-          "--tw-prose-links": "hsl(var(--muted-foreground))",
+        DEFAULT: {
+          css: {
+            a: {
+              color: "hsl(var(--text-foreground))",
+              textDecorationColor: "hsl(var(--text-foreground))",
+              "&:hover": {
+                color: "hsl(var(--primary))",
+                textDecorationColor: "hsl(var(--primary))",
+              },
+              textUnderlineOffset: "0.2em",
+            },
+          },
         },
       },
       colors: {
@@ -78,8 +88,5 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    require("tailwindcss-animate"),
-    require("@tailwindcss/typography"),
-  ],
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
 };

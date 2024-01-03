@@ -1,3 +1,4 @@
+import Link from "@/components/link";
 import Base from "@/layouts/base";
 import { CheerioAPI, Element, load } from "cheerio";
 import { z } from "zod";
@@ -80,9 +81,7 @@ export default async function HackerNews() {
         <div className="flex flex-col space-y-2">
           {posts.map((post) => (
             <div key={post.id} className="flex flex-col space-y-1">
-              <a href={post.url} className="">
-                {post.title}
-              </a>
+              <Link href={post.url}>{post.title}</Link>
               <div className="text-sm text-muted-foreground">
                 {post.points} points · {post.comments} comments
               </div>
