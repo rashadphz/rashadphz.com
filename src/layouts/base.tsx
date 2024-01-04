@@ -1,5 +1,6 @@
 import Footer from "@/components/footer";
 import Link from "@/components/link";
+import ToggleThemeButton from "@/components/toggle-theme-button";
 
 export default function Base({ children }: { children: React.ReactNode }) {
   return (
@@ -14,6 +15,7 @@ export default function Base({ children }: { children: React.ReactNode }) {
             <Link href="/blog">blog</Link>
             {/* <Link href="/projects">projects</Link> */}
             <Link href="/resume.pdf">resume</Link>
+            <ToggleThemeButton />
           </div>
         </header>
         <div className="mt-2" />

@@ -17,6 +17,9 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ["var(--font-geist-sans)"],
+      },
       typography: {
         DEFAULT: {
           css: {
