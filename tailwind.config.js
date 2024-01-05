@@ -32,6 +32,7 @@ module.exports = {
                 textDecorationColor: "hsl(var(--primary))",
               },
               textUnderlineOffset: "0.2em",
+              textDecorationThickness: "3px",
             },
           },
         },

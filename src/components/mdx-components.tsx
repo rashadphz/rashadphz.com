@@ -7,6 +7,9 @@ interface MdxProps {
   code: string;
 }
 
+const lineNumbersStyle =
+  "[counter-reset:line] before:[&>span]:mr-3 before:[&>span]:inline-block before:[&>span]:w-4 before:[&>span]:text-right before:[&>span]:text-white/20 before:[&>span]:![content:counter(line)] before:[&>span]:[counter-increment:line]";
+
 const components = {
   h1: ({ className, ...props }) => (
     <h1 className={cn("", className)} {...props} />
@@ -30,10 +33,7 @@ const components = {
     <a className={cn("", className)} {...props} />
   ),
   p: ({ className, ...props }) => (
-    <p
-      className={cn("text-lg leading-[1.7] text-foreground", className)}
-      {...props}
-    />
+    <p className={cn("text-foreground", className)} {...props} />
   ),
   ul: ({ className, ...props }) => (
     <ul className={cn("", className)} {...props} />
@@ -45,7 +45,13 @@ const components = {
     <li className={cn("", className)} {...props} />
   ),
   blockquote: ({ className, ...props }) => (
-    <blockquote className={cn("", className)} {...props} />
+    <blockquote
+      className={cn(
+        "border-accent-foreground [&>*]:text-muted-foreground",
+        className
+      )}
+      {...props}
+    />
   ),
   img: ({
     className,
@@ -73,17 +79,63 @@ const components = {
   td: ({ className, ...props }) => (
     <td className={cn("", className)} {...props} />
   ),
-  pre: ({ className, ...props }) => {
+
+  figcaption: ({ className, ...props }) => {
     return (
-      <pre
-        className={cn("text-lg border-muted border-2 font-mono", className)}
+      <figcaption
+        className={cn(
+          "not-prose mb-0.5 rounded-md bg-accent-foreground/40 px-3 py-1 font-mono text-xs shadow-sm",
+          className
+        )}
         {...props}
       />
     );
   },
-  code: ({ className, ...props }) => (
-    <code className={cn("rounded-xl font-mono", className)} {...props} />
-  ),
+  figure: ({ className, ...props }) => {
+    return (
+      <figure
+        className={cn(
+          "not-prose overflow-hidden rounded-lg bg-accent-foreground/10 ring-1 ring-accent-foreground/[3%] ring-inset",
+          className
+        )}
+        {...props}
+      />
+    );
+  },
+  pre: ({ className, ...props }) => {
+    return (
+      <pre
+        className={cn(
+          "not-prose overflow-x-auto py-2 text-sm leading-6",
+          className
+        )}
+        {...props}
+      />
+    );
+  },
+  code: ({ className, ...props }) => {
+    const showLineNumbers = "data-line-numbers" in props;
+    const isInline =
+      typeof props.children === "string" || props.children.type !== undefined;
+
+    return (
+      <code
+        className={cn(
+          "not-prose ",
+          {
+            "not-prose grid [&>span]:border-l-4 [&>span]:border-l-transparent [&>span]:pl-2 [&>span]:pr-3":
+              !isInline,
+            "border px-1 text-sm rounded-md border-accent-foreground": isInline,
+
+            [lineNumbersStyle]: showLineNumbers,
+          },
+          className
+        )}
+        {...props}
+      />
+    );
+  },
+
   Image,
   //   Callout,
   //   Card: MdxCard,

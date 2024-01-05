@@ -3,8 +3,16 @@ import {
   defineDocumentType,
   makeSource,
 } from "contentlayer/source-files";
+import rehypeSlug from "rehype-slug";
+
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
+
 import rehypePrettyCode from "rehype-pretty-code";
 import remarkGfm from "remark-gfm";
+import {
+  rehypePrettyCodeClasses,
+  rehypePrettyCodeOptions,
+} from "./src/lib/rehypePrettyCode";
 
 const computedFields: ComputedFields = {
   slug: {
@@ -38,11 +46,16 @@ export default makeSource({
   mdx: {
     remarkPlugins: [remarkGfm],
     rehypePlugins: [
+      rehypeSlug,
+      //@ts-ignore
+      [rehypePrettyCode, rehypePrettyCodeOptions],
+    //   [rehypePrettyCodeClasses],
       [
-        // @ts-ignore
-        rehypePrettyCode,
+        rehypeAutolinkHeadings,
         {
-          theme: "dark-plus",
+          properties: {
+            className: "anchor",
+          },
         },
       ],
     ],
