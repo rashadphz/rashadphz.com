@@ -19,13 +19,14 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["var(--font-geist-sans)"],
+        mono: ["var(--font-mono)"],
       },
       typography: {
         DEFAULT: {
           css: {
             a: {
-              color: "hsl(var(--text-foreground))",
-              textDecorationColor: "hsl(var(--text-foreground))",
+              color: "hsl(var(--primary))",
+              textDecorationColor: "hsl(var(--accent-foreground))",
               "&:hover": {
                 color: "hsl(var(--primary))",
                 textDecorationColor: "hsl(var(--primary))",

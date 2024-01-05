@@ -1,5 +1,5 @@
+import Link from "@/components/link";
 import Base from "@/layouts/base";
-import Image from "next/image";
 
 export default function Home() {
   return (
@@ -12,9 +12,9 @@ export default function Home() {
             <strong>backend </strong>development and <strong>infra</strong>.
           </p>
           <p>
-            I&apos;ve interned at <a href="https://stripe.com">Stripe</a>,{" "}
-            <a href="https://meta.com">Meta</a>, and{" "}
-            <a href="https://yext.com">Yext</a>.
+            I&apos;ve interned at <Link href="https://stripe.com">Stripe</Link>,{" "}
+            <Link href="https://meta.com">Meta</Link>, and{" "}
+            <Link href="https://yext.com">Yext</Link>.
           </p>
         </main>
       </Base>
