@@ -32,7 +32,7 @@ export default async function PostPage({ params }: PostPageProps) {
     <Base>
       <article className="px-4">
         <div className="mb-8 text-left">
-          <h1 className="text-4xl lg:text-5xl font-semibold">{post.title}</h1>
+          <h1 className="text-3xl lg:text-4xl font-semibold">{post.title}</h1>
           <time
             dateTime={post.date}
             className="block mb-1 text-sm text-muted-foreground"

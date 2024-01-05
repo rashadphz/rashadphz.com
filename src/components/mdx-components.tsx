@@ -2,6 +2,7 @@
 import { cn } from "@/lib/utils";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import Image from "next/image";
+import "@/styles/mdx.css";
 
 interface MdxProps {
   code: string;
@@ -121,7 +122,7 @@ const components = {
     return (
       <code
         className={cn(
-          "not-prose ",
+          "not-prose bg-transparent",
           {
             "not-prose grid [&>span]:border-l-4 [&>span]:border-l-transparent [&>span]:pl-2 [&>span]:pr-3":
               !isInline,

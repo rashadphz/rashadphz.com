@@ -4,15 +4,12 @@ import {
   makeSource,
 } from "contentlayer/source-files";
 import rehypeSlug from "rehype-slug";
+import remarkShikiTwoSlash from "remark-shiki-twoslash";
 
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 
-import rehypePrettyCode from "rehype-pretty-code";
+import rehypePrettyCode, { Options } from "rehype-pretty-code";
 import remarkGfm from "remark-gfm";
-import {
-  rehypePrettyCodeClasses,
-  rehypePrettyCodeOptions,
-} from "./src/lib/rehypePrettyCode";
 
 const computedFields: ComputedFields = {
   slug: {
@@ -40,6 +37,17 @@ export const Post = defineDocumentType(() => ({
   computedFields,
 }));
 
+const rehypePrettyCodeOptions: Options = {
+  theme: {
+    dark: "slack-dark",
+    light: "github-light",
+  },
+  keepBackground: false,
+  tokensMap: {
+    fn: "entity.name.function",
+  },
+};
+
 export default makeSource({
   contentDirPath: "./src/",
   documentTypes: [Post],
@@ -49,7 +57,6 @@ export default makeSource({
       rehypeSlug,
       //@ts-ignore
       [rehypePrettyCode, rehypePrettyCodeOptions],
-    //   [rehypePrettyCodeClasses],
       [
         rehypeAutolinkHeadings,
         {

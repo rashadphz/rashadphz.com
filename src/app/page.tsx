@@ -9,7 +9,8 @@ export default function Home() {
           <p>
             Hi, I&apos;m <strong>Rashad</strong> 👋🏿. I&apos;m an honors CS
             student at <strong>UT Austin</strong>. I&apos;m interested in{" "}
-            <strong>backend </strong>development and <strong>infra</strong>.
+            <strong>backend </strong>development, <strong>infra</strong> and{" "}
+            <strong>search & retrieval</strong>.
           </p>
           <p>
             I&apos;ve interned at <Link href="https://stripe.com">Stripe</Link>,{" "}
