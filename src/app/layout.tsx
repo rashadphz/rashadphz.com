@@ -5,7 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { GeistSans } from "geist/font/sans";
 import { JetBrains_Mono as Mono } from "next/font/google";
 
-export const mono = Mono({
+const mono = Mono({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-mono",
