@@ -13,7 +13,7 @@ export default function Base({ children }: { children: React.ReactNode }) {
           <div className="flex space-x-3">
             <Link href="/hn">hn</Link>
             <Link href="/blog">blog</Link>
-            <Link href="/projects">projects</Link>
+            {/* <Link href="/projects">projects</Link> */}
             <Link href="/resume.pdf">resume</Link>
             <ToggleThemeButton />
           </div>
