@@ -97,7 +97,7 @@ const components = {
     return (
       <figure
         className={cn(
-          "not-prose overflow-hidden rounded-lg bg-accent-foreground/10 ring-1 ring-accent-foreground/[3%] ring-inset",
+          "not-prose overflow-hidden rounded-lg bg-accent ring-1 ring-accent-foreground/[10%] ring-inset",
           className
         )}
         {...props}
