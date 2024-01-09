@@ -1,0 +1,84 @@
+---
+date: "2023-01-04"
+thumbnail: /assets/how-to-make-beef-stew.jpeg
+title: Github Copilot Auto-Suggest Considered Harmful
+description: test blog
+readTime: 4
+---
+
+I've gotten a lot of value out of [Github Copilot](https://github.com/features/copilot) over the past **2+ years** that I've been using it. Over time, I've realized that the auto-suggest feature can be more harmful than helpful. I've set up [Cursor](https://cursor.sh/) (or VSCode) to only show suggestions when I ask for them.
+
+Just to be clear, I'm not saying Copilot is bad. It's great, I use it every day. I'm saying it shouldn't be treated like autocomplete--the auto-suggest feature doesn't feel like the right way to use it. **I'm only talking about the auto-suggest feature.**
+
+## Why I turned it off
+
+### Learning Syntax
+Copilot's been amazing for learning new syntax, but also terrible.
+The good part: it cuts out the time you'd spend context-switching between your browser, Google, and your editor. The terrible part: if you abuse auto-suggest, it will 100% slow down your learning and you probably won't even notice it.
+
+I tried learning Rust with Copilot by [building a shell](https://github.com/rashadphil/rush). I initially thought about disabling Copilot, but I didn't want to slow myself down by context-switching every time I needed to look up syntax. Instead, I kept it on, and I was extra careful about reading and understanding all the code Copilot produced.
+
+Once I felt comfortable, I would eagerly complete Copilot's suggestions thinking I easily could've written the code myself. I was wrong.
+
+A few days later, I was working on a plane (meaning **no internet** & **no Copilot**), and I realized I could barely write Rust syntax. I knew generally how things looked, but the tiny details that Copilot had been writing for me here and there were missing from my memory.
+
+I know I'd avoid mindlessly copying code from StackOverflow if I were trying to learn a language. It feels obviously wrong from a learning perspective. *Why does Copilot feel different than this?* Since the auto-suggestions feel so natural, it doesn't feel as wrong. It makes it so easy to forget how important it is to type out the code yourself.
+
+**The Fix:** **When learning a language or any syntax you need to remember, only trigger Copilot suggestions when you would've Googled the syntax anyway. Most importantly, type it out yourself.** In this case, you get the best of both worlds: you're still saving time by not context-switching, but you're also forced to write and think about the code yourself. It might seem obvious, but Copilot makes it so easy to forget.
+
+<Callout title="Hmm.." icon="bulb">
+If you've used Copilot to help you learn a new language, try to see how you do without it (especially other students like me). You might be surprised.
+</Callout>
+
+### Thinking & Interrupts
+I think you'd feel pretty annoyed if someone were constantly interrupting your thoughts with suggestions. Maybe if the suggestions were always right, you'd be fine with it. But when they're wrong?
+
+Before I learned I could disable auto-suggest, I'd sometimes look away from my screen to think about a problem independently, and when I looked back, Copilot had already written code for me. When it was wrong, it wasted my time. I'd lose my train of thought by trying to verify the suggestion. But when it was right, it didn't feel great either--it took all the fun and learning out of solving the problem.
+
+I've noticed that, no matter what, once I've read a suggestion it's in my head. Even if I go with a different approach, the suggestion has already influenced my thinking. When the suggestion is unprompted, it doesn't feel like I'm in control.
+
+> GitHub Copilot - Your AI **pair programmer** [(github.com)](https://github.com/features/copilot)
+
+In the context of [Pair Programming](https://en.wikipedia.org/wiki/Pair_programming), the driver writes the code, the navigator reviews it. With auto-suggest, it seems like Copilot is the driver, and you're the navigator. This isn't always a bad thing, but ***why not just ask for suggestions when you need them?***
+
+<Callout title="Isn't asking slow?" icon="question">
+Not at all. I've found that it feels quicker to ask for suggestions rather than waiting for them to appear. With a comfortable keybinding (`⌘` + `enter` in my case), it feels **much** faster, and more natural than the noisy auto-suggestions.
+</Callout>
+
+
+## Turning it Off
+All this yapping and I haven't even told you how to turn it off. It's pretty simple.\
+Open Cursor or VSCode, and follow these steps:
+
+### Disabling Auto-Suggest
+Go to your `settings.json`:
+1. Open your command prompt (`⌘` + `shift` + `p`)
+1. Type "open user settings"
+1. Select **Preferences: Open User Settings (JSON)**
+
+Add the following to your `settings.json`:
+```json title="settings.json"
+{
+    "github.copilot.editor.enableAutoCompletions": false,
+}
+```
+
+### Adding a Trigger
+Go to your `keybindings.json`:
+1. Open your command prompt
+1. Type "open keyboard shortcuts"
+1. Select **Preferences: Open Keyboard Shortcuts (JSON)**
+
+As an example, I set my keybinding to `⌘` + `enter`.\
+Add the following to your `keybindings.json`:
+```json title="keybindings.json"
+{
+    "key": "cmd+enter",
+    "command": "editor.action.inlineSuggest.trigger",
+    "when": "config.github.copilot.inlineSuggest.enable && editorTextFocus && !editorHasSelection && !inlineSuggestionsVisible"
+}
+```
+
+## Conclusion
+These are all just my opinions (the title is a joke). Maybe try it out for yourself and see how it feels. I'd love to hear your thoughts. Thanks for reading!
+

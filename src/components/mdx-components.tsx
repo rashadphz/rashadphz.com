@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import Image from "next/image";
 import "@/styles/mdx.css";
+import { Callout } from "./callout";
 
 interface MdxProps {
   code: string;
@@ -126,7 +127,8 @@ const components = {
           {
             "not-prose grid [&>span]:border-l-4 [&>span]:border-l-transparent [&>span]:pl-2 [&>span]:pr-3":
               !isInline,
-            "border px-1 text-sm rounded-md border-accent-foreground": isInline,
+            "border px-[0.25rem] py-[0.05rem] text-sm font-semibold rounded-md border-accent-foreground/30 bg-accent":
+              isInline,
 
             [lineNumbersStyle]: showLineNumbers,
           },
@@ -138,7 +140,7 @@ const components = {
   },
 
   Image,
-  //   Callout,
+  Callout,
   //   Card: MdxCard,
 };
 

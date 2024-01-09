@@ -18,9 +18,6 @@ export const generateStaticParams = async () => {
 async function getPostFromParams(params: PostPageProps["params"]) {
   const slug = params?.slug?.join("/");
   const post = allPosts.find((post) => post.slugAsParams === slug);
-  if (!post) {
-    null;
-  }
   return post;
 }
 
@@ -30,12 +27,12 @@ export default async function PostPage({ params }: PostPageProps) {
 
   return (
     <Base>
-      <article className="px-4">
+      <article className="">
         <div className="mb-8 text-left">
-          <h1 className="text-3xl lg:text-4xl font-semibold">{post.title}</h1>
+          <h1 className="text-3xl font-semibold">{post.title}</h1>
           <time
             dateTime={post.date}
-            className="block mb-1 text-sm text-muted-foreground"
+            className="block text-sm text-muted-foreground"
           >
             {format(parseISO(post.date), "LLLL d, yyyy")}
           </time>
