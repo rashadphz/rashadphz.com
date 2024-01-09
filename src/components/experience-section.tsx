@@ -10,6 +10,7 @@ import {
   SwiftIcon,
   TypescriptIcon,
 } from "@/icons";
+import Link from "./link";
 
 type Experience = {
   duration: string;
@@ -88,15 +89,25 @@ const ToolBadge = ({ tool }: { tool: Tool }) => {
 const ExperienceSection = () => {
   return (
     <div className="">
-      <h3>Experience</h3>
-      <div className="flex flex-col space-y-5">
+      <h3 className="">Experience</h3>
+      <div className="mt-3 flex flex-col space-y-7">
         {experiences.map(
-          ({ company, description, duration, role, location, tools }) => (
+          ({
+            company,
+            description,
+            duration,
+            role,
+            location,
+            tools,
+            companyUrl,
+          }) => (
             <div key={company} className="space-y-1">
               <div className="flex flex-col space-y-1.5">
                 <div className="flex justify-between w-full text-base">
                   <div className="flex space-x-2 items-center">
-                    <div className="font-bold text-foreground">{company}</div>
+                    <Link hideArrow href={companyUrl} className="decoration-1">
+                      {company}
+                    </Link>
                     <LocationBadge location={location} />
                   </div>
                   <div className="text-sm text-muted-foreground">

@@ -15,15 +15,10 @@ export default function Home() {
             in <strong>backend </strong>development, <strong>infra</strong> and{" "}
             <strong>search & retrieval</strong>.
           </p>
-          <p>
-            I&apos;ve interned at <Link href="https://stripe.com">Stripe</Link>,{" "}
-            <Link href="https://meta.com">Meta</Link>, and{" "}
-            <Link href="https://yext.com">Yext</Link>.
-          </p>
-          <div>
+          <div className="mt-12">
             <ExperienceSection />
           </div>
-          <div>
+          <div className="mt-12">
             <BlogSection />
           </div>
         </main>

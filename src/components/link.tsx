@@ -7,9 +7,15 @@ interface LinkProps {
   href: string;
   children: React.ReactNode;
   className?: string;
+  hideArrow?: boolean;
 }
 
-const Link: FC<LinkProps> = ({ href, children, className }) => {
+const Link: FC<LinkProps> = ({
+  href,
+  children,
+  className,
+  hideArrow = false,
+}) => {
   const isExternal = href.startsWith("http");
   return (
     <NextLink
@@ -21,7 +27,7 @@ const Link: FC<LinkProps> = ({ href, children, className }) => {
       target={isExternal ? "_blank" : undefined}
     >
       {children}
-      {isExternal && (
+      {isExternal && !hideArrow && (
         <ArrowTopRightIcon className="w-3 h-3 inline-block ml-1 mb-1" />
       )}
     </NextLink>

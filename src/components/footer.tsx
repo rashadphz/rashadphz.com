@@ -5,6 +5,7 @@ import {
   GitHubLogoIcon,
 } from "@radix-ui/react-icons";
 import { Separator } from "./ui/separator";
+import { XIcon } from "@/icons";
 
 export default function Footer() {
   return (
@@ -12,15 +13,15 @@ export default function Footer() {
       <Separator />
       <footer className="flex justify-between items-center h-8 py-8">
         <span>Rashad Philizaire</span>
-        <div className="flex space-x-3">
+        <div className="flex space-x-3 items-center">
           <Link href="https://github.com/rashadphil">
             <GitHubLogoIcon />
           </Link>
           <Link href="https://www.linkedin.com/in/rashadphil/">
             <LinkedInLogoIcon />
           </Link>
-          <Link href="https://twitter.com/rashadphz">
-            <TwitterLogoIcon />
+          <Link href="https://x.com/rashadphz">
+            <XIcon />
           </Link>
         </div>
       </footer>
