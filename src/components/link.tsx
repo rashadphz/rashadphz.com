@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import NextLink from "next/link";
 import { cn } from "@/lib/utils";
+import { ArrowTopRightIcon, ExternalLinkIcon } from "@radix-ui/react-icons";
 
 interface LinkProps {
   href: string;
@@ -20,6 +21,9 @@ const Link: FC<LinkProps> = ({ href, children, className }) => {
       target={isExternal ? "_blank" : undefined}
     >
       {children}
+      {isExternal && (
+        <ArrowTopRightIcon className="w-3 h-3 inline-block ml-1 mb-1" />
+      )}
     </NextLink>
   );
 };

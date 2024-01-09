@@ -20,7 +20,7 @@ export default function Base({ children }: { children: React.ReactNode }) {
         </header>
         <div className="mt-2" />
         <div>{children}</div>
-        <div className="mt-8" />
+        <div className="mt-20" />
         <Footer />
       </div>
     </>
