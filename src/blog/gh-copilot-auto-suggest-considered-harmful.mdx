@@ -1,6 +1,5 @@
 ---
-date: "2023-01-04"
-thumbnail: /assets/how-to-make-beef-stew.jpeg
+date: "2023-01-08"
 title: Github Copilot Auto-Suggest Considered Harmful
 description: test blog
 readTime: 4
@@ -78,6 +77,14 @@ Add the following to your `keybindings.json`:
     "when": "config.github.copilot.inlineSuggest.enable && editorTextFocus && !editorHasSelection && !inlineSuggestionsVisible"
 }
 ```
+
+Now you can trigger suggestions whenever you want by pressing `⌘` + `enter`.
+
+<Callout title="With Cursor?" icon="question" collapsible={true}>
+Cursor has `⌘` + `enter` bound to `editor.action.triggerGPT4` by default.
+
+You can change this or disable it in `keybindings.json`.
+</Callout>
 
 ## Conclusion
 These are all just my opinions. Maybe try it out for yourself and see how it feels. I'd love to hear your thoughts. Thanks for reading!

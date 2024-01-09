@@ -83,10 +83,11 @@ const components = {
   ),
 
   figcaption: ({ className, ...props }) => {
+    // Hardcoding colors, light mode is not supported
     return (
       <figcaption
         className={cn(
-          "not-prose mb-0.5 rounded-md bg-accent-foreground/40 px-3 py-1 font-mono text-xs shadow-sm",
+          "not-prose mb-0.5 rounded-md bg-accent-foreground/40 px-3 py-1 font-mono text-xs shadow-sm text-white/80",
           className
         )}
         {...props}
@@ -94,10 +95,11 @@ const components = {
     );
   },
   figure: ({ className, ...props }) => {
+    // Hardcoding colors, light mode is not supported
     return (
       <figure
         className={cn(
-          "not-prose overflow-hidden rounded-lg bg-accent ring-1 ring-accent-foreground/[10%] ring-inset",
+          "not-prose overflow-hidden rounded-lg bg-[#2D211B] ring-1 ring-accent-foreground/[10%] ring-inset",
           className
         )}
         {...props}

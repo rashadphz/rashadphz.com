@@ -5,11 +5,13 @@ import {
 } from "contentlayer/source-files";
 import rehypeSlug from "rehype-slug";
 import remarkShikiTwoSlash from "remark-shiki-twoslash";
+import fs from "fs";
 
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 
 import rehypePrettyCode, { Options } from "rehype-pretty-code";
 import remarkGfm from "remark-gfm";
+import theme from "@/themes/vars.json" assert { type: "json" };
 
 const computedFields: ComputedFields = {
   slug: {
@@ -38,10 +40,8 @@ export const Post = defineDocumentType(() => ({
 }));
 
 const rehypePrettyCodeOptions: Options = {
-  theme: {
-    dark: "slack-dark",
-    light: "github-light",
-  },
+  theme: "rose-pine-moon",
+
   keepBackground: false,
   tokensMap: {
     fn: "entity.name.function",

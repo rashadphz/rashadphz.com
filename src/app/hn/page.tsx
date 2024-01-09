@@ -77,7 +77,14 @@ export default async function HackerNews() {
   return (
     <Base>
       <div className="flex flex-col">
-        <h2 className="text-2xl font-bold mb-8">Favorite HN Posts</h2>
+        <div className="space-y-1 mb-6">
+          <h2 className="text-2xl font-bold ">Favorite HN Posts</h2>
+          <p>
+            All the posts that I&apos;ve upvoted on{" "}
+            <Link href="https://news.ycombinator.com/">Hacker News</Link>.
+            Updated daily.
+          </p>
+        </div>
         <ul className="space-y-6">
           {posts.map((post) => (
             <li key={post.id} className="flex flex-col space-y-1">
