@@ -14,10 +14,10 @@ export default function Footer() {
       <footer className="flex justify-between items-center h-8 py-8">
         <span>Rashad Philizaire</span>
         <div className="flex space-x-3 items-center">
-          <Link href="https://github.com/rashadphil">
+          <Link href="https://github.com/rashadphz">
             <GitHubLogoIcon />
           </Link>
-          <Link href="https://www.linkedin.com/in/rashadphil/">
+          <Link href="https://www.linkedin.com/in/rashadphz/">
             <LinkedInLogoIcon />
           </Link>
           <Link href="https://x.com/rashadphz">
