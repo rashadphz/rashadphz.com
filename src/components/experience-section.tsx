@@ -30,7 +30,7 @@ const experiences: Experience[] = [
     companyUrl: "https://stripe.com",
     description: "Added a lot of payment methods.",
     location: "NYC",
-    tools: ["typescript", "ruby", "airflow", "spark"],
+    tools: ["typescript", "ruby", "spark"],
   },
   {
     duration: "2022",
@@ -39,7 +39,7 @@ const experiences: Experience[] = [
     companyUrl: "https://meta.com",
     description: "Made an app.",
     location: "SF/MPK",
-    tools: ["swift", "graphql", "postgres", "prisma"],
+    tools: ["swift", "graphql", "postgres"],
   },
   {
     duration: "2021",
@@ -79,7 +79,7 @@ type Tool = keyof typeof toolIconMap;
 const ToolBadge = ({ tool }: { tool: Tool }) => {
   const Icon = toolIconMap[tool];
   return (
-    <span className="me-2 items-center px-2 py-0.5 font-semibold rounded-md text-xs font-mono border-accent border text-foreground">
+    <span className="me-2 items-center px-2 py-0.5 font-semibold rounded-md text-[0.70rem] font-mono border-accent border text-foreground">
       <Icon />
       <span className="ml-2 capitalize">{tool}</span>
     </span>
@@ -114,7 +114,7 @@ const ExperienceSection = () => {
                     {duration}
                   </div>
                 </div>
-                <div className="font-mono text-sm">{role}</div>
+                <div className="font-mono font-bold text-sm">{role}</div>
               </div>
               <div className="text-sm">{description}</div>
               <div className="">

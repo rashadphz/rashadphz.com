@@ -17,11 +17,11 @@ const SvgIcon = ({
 }: SvgIconProps) => {
   return (
     <svg
-      className={cn("inline-block", className)}
+      className={cn("inline-block align-middle", className)}
       fill={fill}
       viewBox={viewBox || "0 0 24 24"}
-      height={size || "13"}
-      width={size || "13"}
+      height={size || "12"}
+      width={size || "12"}
     >
       {children}
     </svg>

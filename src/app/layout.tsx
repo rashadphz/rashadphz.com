@@ -5,11 +5,37 @@ import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme-provider";
 import { GeistSans } from "geist/font/sans";
 import { JetBrains_Mono as Mono } from "next/font/google";
+import localFont from "next/font/local";
 
 const mono = Mono({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-mono",
+});
+
+const lausanne = localFont({
+  src: [
+    {
+      path: "../fonts/TWKLausanne-400.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../fonts/TWKLausanne-400Italic.woff2",
+      weight: "400",
+      style: "italic",
+    },
+    {
+      path: "../fonts/TWKLausanne-700.woff2",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../fonts/TWKLausanne-700Italic.woff2",
+      weight: "700",
+      style: "italic",
+    },
+  ],
 });
 
 export const metadata: Metadata = {
@@ -27,7 +53,8 @@ export default function RootLayout({
       <body
         className={cn(
           "min-h-screen bg-background antialiased",
-          GeistSans.className,
+          //   GeistSans.className,
+          lausanne.className,
           mono.variable
         )}
       >
