@@ -114,9 +114,12 @@ const ExperienceSection = () => {
                     {duration}
                   </div>
                 </div>
-                <div className="font-mono font-bold text-sm">{role}</div>
+                <span className="flex flex-row items-center space-x-2">
+                  <div className="font-mono font-medium text-sm">{role}</div>
+                  <div className="text-sm text-muted-foreground">•</div>
+                  <div className="text-sm">{description}</div>
+                </span>
               </div>
-              <div className="text-sm">{description}</div>
               <div className="">
                 {tools.map((tool) => (
                   <ToolBadge key={tool} tool={tool} />
