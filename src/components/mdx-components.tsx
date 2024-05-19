@@ -5,6 +5,7 @@ import "@/styles/mdx.css";
 import { Callout } from "./callout";
 import { Video } from "./video";
 import { Image } from "./Image";
+import Link from "./link";
 
 interface MdxProps {
   code: string;
@@ -33,7 +34,7 @@ const components = {
     <h6 className={cn("", className)} {...props} />
   ),
   a: ({ className, ...props }) => (
-    <a className={cn("", className)} {...props} />
+    <Link hideArrow className={cn("", className)} {...props} />
   ),
   p: ({ className, ...props }) => (
     <p className={cn("text-foreground", className)} {...props} />

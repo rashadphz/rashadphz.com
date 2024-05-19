@@ -21,7 +21,7 @@ const Link: FC<LinkProps> = ({
     <NextLink
       href={href}
       className={cn(
-        "underline underline-offset-4 decoration-accent-foreground text-foreground font-medium decoration-[3px]",
+        "underline underline-offset-4 decoration-accent-foreground/80 text-foreground font-medium decoration-[2px] hover:decoration-accent-foreground hover:text-accent-foreground",
         className
       )}
       target={isExternal ? "_blank" : undefined}
