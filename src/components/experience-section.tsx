@@ -105,18 +105,24 @@ const ExperienceSection = () => {
               <div className="flex flex-col space-y-1.5">
                 <div className="flex justify-between w-full text-base">
                   <div className="flex space-x-2 items-center">
-                    <Link hideArrow href={companyUrl} className="decoration-1">
-                      {company}
-                    </Link>
+                    <div className="flex items-center">
+                      <Link
+                        hideArrow
+                        href={companyUrl}
+                        className="decoration-1"
+                      >
+                        {company}
+                      </Link>
+                    </div>
                     <LocationBadge location={location} />
                   </div>
                   <div className="text-sm text-muted-foreground">
                     {duration}
                   </div>
                 </div>
-                <span className="flex flex-row items-center space-x-2">
-                  <div className="font-mono font-medium text-sm">{role}</div>
-                  <div className="text-sm text-muted-foreground">•</div>
+                <span className="flex flex-row items-center text-sm space-x-2">
+                  <div className="font-mono font-medium">{role}</div>
+                  <div className="text-muted-foreground ">•</div>
                   <div className="text-sm">{description}</div>
                 </span>
               </div>

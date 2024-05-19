@@ -1,9 +1,10 @@
 // @ts-nocheck
 import { cn } from "@/lib/utils";
 import { useMDXComponent } from "next-contentlayer/hooks";
-import Image from "next/image";
 import "@/styles/mdx.css";
 import { Callout } from "./callout";
+import { Video } from "./video";
+import { Image } from "./Image";
 
 interface MdxProps {
   code: string;
@@ -61,7 +62,11 @@ const components = {
     ...props
   }: React.ImgHTMLAttributes<HTMLImageElement>) => (
     // eslint-disable-next-line @next/next/no-img-element
-    <img className={cn("rounded-md border", className)} alt={alt} {...props} />
+    <img
+      className={cn("rounded-md border-2", className)}
+      alt={alt}
+      {...props}
+    />
   ),
   hr: ({ ...props }) => <hr className="my-4 md:my-8" {...props} />,
   table: ({ className, ...props }: React.HTMLAttributes<HTMLTableElement>) => (
@@ -143,6 +148,7 @@ const components = {
 
   Image,
   Callout,
+  Video,
   //   Card: MdxCard,
 };
 
