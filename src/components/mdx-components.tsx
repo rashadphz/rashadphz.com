@@ -93,7 +93,7 @@ const components = {
     return (
       <figcaption
         className={cn(
-          "not-prose mb-0.5 rounded-md bg-accent-foreground/40 px-3 py-1 font-mono text-xs shadow-sm text-white/80",
+          "not-prose px-3 py-1 font-mono text-sm underline underline-offset-2 bg-brown text-primary",
           className
         )}
         {...props}
@@ -104,10 +104,7 @@ const components = {
     // Hardcoding colors, light mode is not supported
     return (
       <figure
-        className={cn(
-          "not-prose overflow-hidden rounded-lg bg-[#2D211B] ring-1 ring-accent-foreground/[10%] ring-inset",
-          className
-        )}
+        className={cn("not-prose overflow-hidden rounded-lg", className)}
         {...props}
       />
     );
@@ -116,7 +113,7 @@ const components = {
     return (
       <pre
         className={cn(
-          "not-prose overflow-x-auto py-2 text-sm leading-6",
+          "not-prose overflow-x-auto pb-2 text-sm leading-5 border-accent-foreground/30 border border-t-0 pt-2",
           className
         )}
         {...props}
@@ -135,7 +132,7 @@ const components = {
           {
             "not-prose grid [&>span]:border-l-4 [&>span]:border-l-transparent [&>span]:pl-2 [&>span]:pr-3":
               !isInline,
-            "border px-[0.25rem] py-[0.05rem] text-sm font-semibold rounded-md border-accent-foreground/30 bg-accent":
+            "border px-[0.25rem] py-[0.05rem] text-sm font-semibold rounded-md border-accent-foreground/30":
               isInline,
 
             [lineNumbersStyle]: showLineNumbers,

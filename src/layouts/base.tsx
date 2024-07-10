@@ -15,7 +15,6 @@ export default function Base({ children }: { children: React.ReactNode }) {
             <Link href="/blog">blog</Link>
             {/* <Link href="/projects">projects</Link> */}
             <Link href="/resume.pdf">resume</Link>
-            <ToggleThemeButton />
           </div>
         </header>
         <div className="mt-2" />

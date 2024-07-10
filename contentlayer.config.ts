@@ -40,7 +40,7 @@ export const Post = defineDocumentType(() => ({
 }));
 
 const rehypePrettyCodeOptions: Options = {
-  theme: "rose-pine-moon",
+  theme: "github-dark",
 
   keepBackground: false,
   tokensMap: {

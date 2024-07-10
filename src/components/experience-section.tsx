@@ -24,37 +24,46 @@ type Experience = {
 
 const experiences: Experience[] = [
   {
+    duration: "current",
+    company: "glean",
+    role: "swe",
+    companyUrl: "https://glean.com",
+    description: "workflows + agents",
+    location: "sf",
+    tools: ["go"],
+  },
+  {
     duration: "2023",
-    company: "Stripe",
-    role: "SWE Intern",
+    company: "stripe",
+    role: "swe intern",
     companyUrl: "https://stripe.com",
-    description: "Added a lot of payment methods.",
-    location: "NYC",
-    tools: ["typescript", "ruby", "spark"],
+    description: "added a lot of payment methods",
+    location: "nyc",
+    tools: ["ruby", "spark"],
   },
   {
     duration: "2022",
-    company: "Meta",
-    role: "Meta University Intern",
+    company: "meta",
+    role: "meta university intern",
     companyUrl: "https://meta.com",
-    description: "Made an app.",
-    location: "SF/MPK",
-    tools: ["swift", "graphql", "postgres"],
+    description: "made an app",
+    location: "sf/mpk",
+    tools: ["swift", "graphql"],
   },
   {
     duration: "2021",
-    company: "Yext",
-    role: "SWE Intern",
+    company: "yext",
+    role: "swe intern",
     companyUrl: "https://yext.com",
-    description: "Worked on Yext Pages.",
-    location: "DC",
+    description: "worked on yext pages",
+    location: "dc",
     tools: ["react", "go"],
   },
 ];
 
 const LocationBadge = ({ location }: { location: string }) => {
   return (
-    <div className="inline-flex items-center px-2 py-0.5 font-semibold rounded-md text-xs font-mono bg-accent text-foreground">
+    <div className="inline-flex items-center px-2 py-0.5 font-semibold rounded-md text-xs font-mono bg-accent text-primary">
       {location}
     </div>
   );
@@ -89,8 +98,8 @@ const ToolBadge = ({ tool }: { tool: Tool }) => {
 const ExperienceSection = () => {
   return (
     <div className="">
-      <h3 className="">Experience</h3>
-      <div className="mt-3 flex flex-col space-y-7">
+      <h3 className="">experience</h3>
+      <div className="mt-3 flex flex-col space-y-6">
         {experiences.map(
           ({
             company,
@@ -121,9 +130,9 @@ const ExperienceSection = () => {
                   </div>
                 </div>
                 <span className="flex flex-row items-center text-sm space-x-2">
-                  <div className="font-mono font-medium">{role}</div>
-                  <div className="text-muted-foreground ">•</div>
-                  <div className="text-sm">{description}</div>
+                  <div className="font-mono font-extrabold ">{role}</div>
+                  <div className="text-primary font-bold">•</div>
+                  <div className="font-mono">{description}</div>
                 </span>
               </div>
               <div className="">

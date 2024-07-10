@@ -10,10 +10,15 @@ export default function Home() {
       <Base>
         <main className="prose dark:prose-invert">
           <p>
-            Hi, I&apos;m <strong>Rashad</strong> <WavingHand /> . I&apos;m an
-            honors CS student at <strong>UT Austin</strong>. I&apos;m interested
-            in <strong>backend </strong>development, <strong>infra</strong> and{" "}
-            <strong>search & retrieval</strong>.
+            hi, i&apos;m <strong>rashad</strong> <WavingHand />. I was an honors
+            cs student at <strong>ut austin</strong>. <br />
+            I&apos;m interested in <strong>llms</strong>,{" "}
+            <strong>agents</strong> and <strong>search & retrieval</strong>. I
+            built{" "}
+            <Link className="" href="https://github.com/rashadphz/farfalle">
+              farfalle
+            </Link>
+            .
           </p>
           <div className="mt-12">
             <ExperienceSection />
