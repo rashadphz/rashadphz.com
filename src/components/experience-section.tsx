@@ -30,7 +30,7 @@ const experiences: Experience[] = [
     companyUrl: "https://glean.com",
     description: "workflows + agents",
     location: "sf",
-    tools: ["go"],
+    tools: ["go", "typescript"],
   },
   {
     duration: "2023",
@@ -63,7 +63,7 @@ const experiences: Experience[] = [
 
 const LocationBadge = ({ location }: { location: string }) => {
   return (
-    <div className="inline-flex items-center px-2 py-0.5 font-semibold rounded-md text-xs font-mono bg-accent text-primary">
+    <div className="inline-flex items-center px-2 py-0.5 font-semibold rounded-md text-xs font-mono bg-dark-green text-primary">
       {location}
     </div>
   );

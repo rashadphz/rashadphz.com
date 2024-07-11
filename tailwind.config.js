@@ -87,6 +87,7 @@ module.exports = {
         "light-beige": "var(--light-beige)",
         tan: "var(--tan)",
         brown: "var(--brown)",
+        "code-background": "var(--code-background)",
       },
       borderRadius: {
         lg: "var(--radius)",

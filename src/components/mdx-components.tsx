@@ -6,6 +6,7 @@ import { Callout } from "./callout";
 import { Video } from "./video";
 import { Image } from "./Image";
 import Link from "./link";
+import { Code, Pre } from "./code-and-pre";
 
 interface MdxProps {
   code: string;
@@ -113,7 +114,7 @@ const components = {
     return (
       <pre
         className={cn(
-          "not-prose overflow-x-auto pb-2 text-sm leading-5 border-accent-foreground/30 border border-t-0 pt-2",
+          "bg-code-background not-prose overflow-x-auto py-3 text-sm leading-5 border rounded-lg",
           className
         )}
         {...props}
@@ -132,7 +133,7 @@ const components = {
           {
             "not-prose grid [&>span]:border-l-4 [&>span]:border-l-transparent [&>span]:pl-2 [&>span]:pr-3":
               !isInline,
-            "border px-[0.25rem] py-[0.05rem] text-sm font-semibold rounded-md border-accent-foreground/30":
+            "border px-[0.25rem] py-[0.05rem] text-sm font-semibold rounded-md ":
               isInline,
 
             [lineNumbersStyle]: showLineNumbers,
