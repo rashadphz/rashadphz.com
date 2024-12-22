@@ -28,7 +28,7 @@ const experiences: Experience[] = [
     company: "glean",
     role: "swe",
     companyUrl: "https://glean.com",
-    description: "workflows + agents",
+    description: "workflows + llm-powered features",
     location: "sf",
     tools: ["go", "typescript"],
   },

@@ -9,7 +9,7 @@ const hackerNewsPostSchema = z.object({
   url: z.string().url(),
   points: z.number().int(),
   comments: z.number().int(),
-  createdAt: z.date(),
+  createdAt: z.date().optional(),
 });
 
 type HackerNewsPost = z.infer<typeof hackerNewsPostSchema>;
@@ -28,7 +28,7 @@ function parsePost(element: Element, $: CheerioAPI): HackerNewsPost {
   const comments = parseInt(
     subtext.find("a:contains('comments')").text().split(" ")[0]
   );
-  const createdAtString = subtext.find("span.age").attr("title");
+  const createdAtString = subtext.find("span.age").attr("title")?.split(" ")[0];
 
   return hackerNewsPostSchema.parse({
     id,
@@ -36,7 +36,7 @@ function parsePost(element: Element, $: CheerioAPI): HackerNewsPost {
     url,
     points,
     comments,
-    createdAt: new Date(createdAtString ?? ""),
+    createdAt: new Date(createdAtString ?? "") ?? null,
   });
 }
 
@@ -62,6 +62,7 @@ async function getHackerNewsLikes(): Promise<HackerNewsPost[] | null> {
     const posts = $("tr.athing")
       .map((i, el) => parsePost(el, $))
       .toArray();
+    console.log({posts, html})
     return posts;
   } catch (error) {
     console.error(`Error fetching Hacker News likes: ${error}`);
@@ -91,11 +92,11 @@ export default async function HackerNews() {
               <Link href={post.url}>{post.title}</Link>
               <div className="text-sm text-muted-foreground">
                 {post.points} points · {post.comments} comments ·{" "}
-                {post.createdAt.toLocaleDateString("en-US", {
+                {post.createdAt ? post.createdAt.toLocaleDateString("en-US", {
                   month: "short",
                   day: "numeric",
                   year: "numeric",
-                })}
+                }) : ""}
               </div>
             </li>
           ))}
