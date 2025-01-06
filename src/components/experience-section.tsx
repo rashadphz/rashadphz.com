@@ -96,7 +96,7 @@ const ExperienceSection = () => {
                      <div className="flex items-center space-x-2">
                        <div className="flex items-center h-5 w-5">
                          <Image
-                           src={`/images/${company}.png`}
+                           src={`/images/${company.toLowerCase()}.png`}
                            alt={`${company} logo`}
                            width={20}
                            height={20}
