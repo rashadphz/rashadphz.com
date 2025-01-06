@@ -39,7 +39,7 @@ const ProjectsSection = () => {
       <div className="mt-3 grid grid-cols-1 md:grid-cols-2 gap-4">
         {projects.map((project, idx) => (
           <NextLink href={project.link} target="_blank">
-            <Card key={idx} className="hover:bg-accent-foreground/20 hover:cursor-pointer transition-colors duration-400 ease-in-out">
+            <Card key={idx} className="hover:bg-accent-foreground/20 hover:cursor-pointer transition-all duration-300">
             <CardContent className="p-3">
               <div className="flex items-center space-x-2 justify-between">
                 <span className="decoration-1 lowercase flex items-center gap-1 text-sm font-medium">
