@@ -5,7 +5,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const siteUrl = "https://www.rashadphz.com";
 
   const postRoutes = allPosts.map((post) => ({
-    url: `${siteUrl}/blog/${post.slug}`,
+    url: `${siteUrl}/writing/${post.slug}`,
     lastModified: post.date,
   }));
 

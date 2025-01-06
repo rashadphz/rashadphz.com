@@ -5,8 +5,8 @@ const BlogSection = () => {
   const posts = allPosts;
   return (
     <div>
-      <h3>blog</h3>
-      <div className="flex flex-col">
+      <h3 className="text-lg font-semibold">writing</h3>
+      <div className="mt-3 flex flex-col">
         <ul className="not-prose space-y-4">
           {posts.map((post) => (
             <li key={post._id} className="flex flex-row justify-between ">
