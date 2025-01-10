@@ -73,7 +73,7 @@ export default function SearchableLinks({ links }: { links: LinkType[] }) {
                 <Favicon url={link.url} title={link.title} />
                 <div className="no-underline text-sm">{link.title}
                     </div>
-            <div className="text-xxs text-muted-foreground font-mono">
+            <div className="hidden sm:block text-xxs text-muted-foreground font-mono">
                 [{new URL(link.url).host.replace(/^www\./, "")}]
             </div>
                 </div>
