@@ -9,10 +9,6 @@ export const revalidate = 0;
 export const runtime = 'edge';
 export const preferredRegion = 'auto';
  
-export const maxDuration = 300;
-export const schedule = "0 0 * * *";
-
- 
 export async function GET() {
   try {
     const updateTitles = await updateMissionNotionTitles();
