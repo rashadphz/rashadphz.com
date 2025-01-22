@@ -16,7 +16,6 @@ async function getLinks(): Promise<LinkType[]> {
     .from("links")
     .select("title, url, created_at")
     .order("created_at", { ascending: false })
-    .order("id", { ascending: false });
 
   if (error) throw error;
   return data.map((link) => linkSchema.parse(link));
