@@ -24,7 +24,7 @@ export default function SearchableLinks({ links }: { links: LinkType[] }) {
   };
 
   const domains = Object.keys(domainCount).sort((a, b) => domainCount[b] - domainCount[a]);
-  
+
   const fuse = new Fuse(links, {
     keys: ["title", "url"],
     threshold: 0.3,
@@ -65,19 +65,21 @@ export default function SearchableLinks({ links }: { links: LinkType[] }) {
         </div>
       </div>
       {filteredLinks.length > 0 ? (
-        <ul className="space-y-4">
+        <ul className="space-y-1">
           {filteredLinks.map((link: LinkType) => (
             <li key={link.url}>
-            <Link href={link.url} key={link.url} className="no-underline" hideArrow>
-              <div className="flex items-center gap-2">
-                <Favicon url={link.url} title={link.title} />
-                <div className="no-underline text-sm">{link.title}
+              <Link href={link.url} key={link.url} className="no-underline " hideArrow>
+                <div className="items-center gap-2 flex-col bg-transparent hover:bg-muted/80 p-1 rounded-md transition-[background-color] duration-300">
+                  <div className="flex items-center gap-2">
+                    <Favicon url={link.url} title={link.title} />
+                    <div className="no-underline text-sm">{link.title}
                     </div>
-            <div className="hidden sm:block text-xxs text-muted-foreground font-mono">
-                [{new URL(link.url).host.replace(/^www\./, "")}]
-            </div>
+                  </div>
+                  <div className="hidden sm:block text-xxs text-muted-foreground font-mono">
+                    [{new URL(link.url).host.replace(/^www\./, "")}]
+                  </div>
                 </div>
-            </Link>
+              </Link>
             </li>
           ))}
         </ul>

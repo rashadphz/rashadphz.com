@@ -89,7 +89,7 @@ const ExperienceSection = () => {
           <AccordionItem 
             value={company} 
             key={company} 
-            className="border-b border-dashed border-slate-200 dark:border-neutral-700 !py-1 !my-0 hover:bg-accent-foreground/20 transition-all duration-300 ease-in-out rounded-md px-1"
+            className="border-b border-dashed border-slate-200 dark:border-neutral-700 !py-1 !my-0 hover:bg-muted transition-all duration-300 ease-in-out rounded-md px-1"
           >
             <AccordionTrigger className="flex items-center justify-between w-full py-1" hideTrigger>
               <div className="flex space-x-2 items-center">

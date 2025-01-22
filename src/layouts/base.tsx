@@ -5,7 +5,7 @@ import ToggleThemeButton from "@/components/toggle-theme-button";
 export default function Base({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <div className="mx-auto max-w-4xl p-4">
+      <div className="mx-auto max-w-3xl p-4">
         <header className="flex justify-between items-center h-20 py-8">
           <Link className="no-underline font-bold" href="/">
             rashadphz
