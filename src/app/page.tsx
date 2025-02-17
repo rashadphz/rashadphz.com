@@ -10,14 +10,12 @@ export default function Home() {
     <>
       <Base>
         <main>
-          <AnimatedSection>
             <p>
               hey, i&apos;m <strong>rashad</strong> <WavingHand />
               <br />
               I love building products / features with <strong>llms</strong>.
               <br />
             </p>
-          </AnimatedSection>
           <AnimatedSection className="mt-12" delay={0.1}>
             <ExperienceSection />
           </AnimatedSection>
