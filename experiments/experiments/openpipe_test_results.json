@@ -1,0 +1,32 @@
+[
+  {
+    "example_id": 0,
+    "input": "Given the following code edit history:\nUser edited file: \"src/quicksort.rs\":\n\n```diff\n@@ -7,4 +7,5 @@\n     }\n\n     let pivot_index = partition(arr);\n+    \n }\n```\n\nPlease help me complete the code edit.\n\nHere's the current code:\n```src/quicksort.rs\nuse std::cmp::Ord;\n<|editable_region_start|>\n\npub fn quicksort<T: Ord>(arr: &mut [T]) {\n    let len = arr.len();\n    if len <= 1 {\n        return;\n    }\n\n    let pivot_index = partition(arr);\n    <|user_cursor_is_here|>\n<|editable_region_end|>\n}\n```",
+    "expected": "Suggestion:\n```src/quicksort.rs\nuse std::cmp::Ord;\n<|editable_region_start|>\n\npub fn quicksort<T: Ord>(arr: &mut [T]) {\n    let len = arr.len();\n    if len <= 1 {\n        return;\n    }\n\n    let pivot_index = partition(arr);\n    quicksort(&mut arr[..pivot_index]);\n    quicksort(&mut arr[pivot_index..]);\n<|editable_region_end|>\n}\n```",
+    "generated": "Suggestion:\n```src/quicksort.rs\nuse std::cmp::Ord;\n<|editable_region_start|>\n\npub fn quicksort<T: Ord>(arr: &mut [T]) {\n    let len = arr.len();\n    if len <= 1 {\n        return;\n    }\n\n    let pivot_index = partition(arr);\n    \n    quicksort(&mut arr[0..pivot_index]);\n    quicksort(&mut arr[pivot_index + 1..]);\n}\n\n<|editable_region_end|>\n}\n```"
+  },
+  {
+    "example_id": 1,
+    "input": "Given the following code edit history:\nUser edited file: \"src/quicksort.rs\":\n\n```diff\n@@ -6,4 +6,4 @@\n         return;\n     }\n\n-    let p\n+    let pivot = partit\n```\n\nPlease help me complete the code edit.\n\nHere's the current code:\n```src/quicksort.rs\nuse std::cmp::Ord;\n<|editable_region_start|>\n\npub fn quicksort<T: Ord>(arr: &mut [T]) {\n    let len = arr.len();\n    if len <= 1 {\n        return;\n    }\n\n    let pivot = partit<|user_cursor_is_here|>\n<|editable_region_end|>\n```",
+    "expected": "Suggestion:\n```src/quicksort.rs\nuse std::cmp::Ord;\n<|editable_region_start|>\n\npub fn quicksort<T: Ord>(arr: &mut [T]) {\n    let len = arr.len();\n    if len <= 1 {\n        return;\n    }\n\n    let pivot = partition(arr);\n}\n<|editable_region_end|>\n```",
+    "generated": "Suggestion:\n```src/quicksort.rs\nuse std::cmp::Ord;\n<|editable_region_start|>\n\npub fn quicksort<T: Ord>(arr: &mut [T]) {\n    let len = arr.len();\n    if len <= 1 {\n        return;\n    }\n\n    let pivot = partition(arr, 0, len - 1);\n    quicksort(&mut arr[0..pivot]);\n    quicksort(&mut arr[pivot + 1..len]);\n}\n\nfn partition<T: Ord>(arr: &mut [T], low: usize, high: usize) -> usize {\n    let pivot = arr[high];\n    let mut i = low;\n\n    for j in low..high {\n        if arr[j] <= pivot {\n            arr.swap(i, j);\n            i += 1;\n        }\n    }\n\n    arr.swap(i, high);\n    i\n}\n<|editable_region_end|>\n```"
+  },
+  {
+    "example_id": 2,
+    "input": "Given the following code edit history:\nUser edited file: \"src/quicksort.rs\":\n\n```diff\n@@ -1,2 +1,3 @@\n fn main() {\n+    thread::sleep(Duration::from_secs(1));\n }\n```\n\nPlease help me complete the code edit.\n\nHere's the current code:\n```src/quicksort.rs\n<|start_of_file|>\n<|editable_region_start|>\nfn main() {<|user_cursor_is_here|>\n    thread::sleep(Duration::from_secs(1));\n}\n<|editable_region_end|>\n```",
+    "expected": "Suggestion:\n```src/quicksort.rs\n<|start_of_file|>\n<|editable_region_start|>\nuse std::thread;\nuse std::time::Duration;\n\nfn main() {\n    thread::sleep(Duration::from_secs(1));\n}\n<|editable_region_end|>\n```",
+    "generated": "Suggestion:\n```src/quicksort.rs\n<|start_of_file|>\n<|editable_region_start|>\nfn main() {\n    thread::sleep(Duration::from_secs(1));\n    let mut data = vec![3, 6, 8, 10, 1, 2, 1];\n    quicksort(&mut data);\n    println!(\"{:?}\", data);\n}\n\nfn quicksort(arr: &mut Vec<i32>) {\n    if arr.len() <= 1 {\n        return;\n    }\n    let pivot = arr[0];\n    let (mut left, mut right) = (Vec::new(), Vec::new());\n    for &x in arr.iter().skip(1) {\n        if x < pivot {\n            left.push(x);\n        } else {\n            right.push(x);\n        }\n    }\n    quicksort(&mut left);\n    quicksort(&mut right);\n    arr.clear();\n    arr.extend(&left);\n    arr.push(pivot);\n    arr.extend(&right);\n}\n\n<|editable_region_end|>\n```"
+  },
+  {
+    "example_id": 3,
+    "input": "Given the following code edit history:\nUser edited file: \"src/main.rs\":\n\n```diff\n@@ -1,4 +1,4 @@\n fn main() {\n-    let root_directory = \"/tmp\";\n+    let dir = \"/tmp\";\n     let glob_pattern = format!(\"{}/**/*.rs\", root_directory);\n }\n```\n\nPlease help me complete the code edit.\n\nHere's the current code:\n```src/main.rs\nfn main() {\n<|editable_region_start|>\n    let dir = \"/tmp\";<|user_cursor_is_here|>\n    let glob_pattern = format!(\"{}/**/*.rs\", root_directory);\n<|editable_region_end|>\n}\n```",
+    "expected": "Suggestion:\n```src/main.rs\nfn main() {\n<|editable_region_start|>\n    let dir = \"/tmp\";\n    let glob_pattern = format!(\"{}/**/*.rs\", dir);\n<|editable_region_end|>\n}\n```",
+    "generated": "Suggestion:\n```src/main.rs\nfn main() {\n<|editable_region_start|>\n    let dir = \"/tmp\";\n    let glob_pattern = format!(\"{}/**/*.rs\", dir);\n<|editable_region_end|>\n}\n```"
+  },
+  {
+    "example_id": 4,
+    "input": "Given the following code edit history:\nUser edited file: \"src/main.rs\":\n\n```diff\n@@ -1,3 +1,4 @@\n fn main() {\n+    let dir = \"/tmp\";\n     let glob_pattern = format!(\"{}/**/*.rs\", \"/tmp\");\n }\n```\n\nPlease help me complete the code edit.\n\nHere's the current code:\n```src/main.rs\nfn main() {\n<|editable_region_start|>\n    let dir = \"/tmp\";<|user_cursor_is_here|>\n    let glob_pattern = format!(\"{}/**/*.rs\", \"/tmp\");\n<|editable_region_end|>\n}\n```",
+    "expected": "Suggestion:\n```src/main.rs\nfn main() {\n<|editable_region_start|>\n    let dir = \"/tmp\";\n    let glob_pattern = format!(\"{}/**/*.rs\", dir);\n<|editable_region_end|>\n}\n```",
+    "generated": "Suggestion:\n```src/main.rs\nfn main() {\n<|editable_region_start|>\n    let dir = \"/tmp\";\n    let glob_pattern = format!(\"{}/**/*.rs\", dir);\n<|editable_region_end|>\n}\n```"
+  }
+]

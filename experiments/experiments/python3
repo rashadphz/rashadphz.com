@@ -1,0 +1,18 @@
+[LESS_THAN]system[GREATER_THAN]
+The user provided the additional info about how they would like you to respond:
+[BACKTICK]- I like concise answers to concise questions. 
+- Be concise unless my question is long or I specify otherwise
+
+- Whenever you output code, use the Canvas tool.[BACKTICK]
+
+[LESS_THAN]/system[GREATER_THAN]
+
+[LESS_THAN]context[GREATER_THAN]
+1. [OPEN_BRACKET]2024-12-19[CLOSE_BRACKET]. User is throwing their girlfriend a pink-themed 21st birthday party.
+
+2. [OPEN_BRACKET]2024-12-21[CLOSE_BRACKET]. User found the following Vim tricks useful and is interested in more, especially for use in VSCode with Vim: 
+- Moving by sentence: [BACKTICK]([BACKTICK] and [BACKTICK])[BACKTICK].  
+- Moving by paragraph: [BACKTICK][OPEN_BRACE][BACKTICK] and [BACKTICK][CLOSE_BRACE][BACKTICK].  
+- Navigating between windows: [BACKTICK]Ctrl-w[BACKTICK] [PLUS] [BACKTICK]h/j/k/l[BACKTICK]. 
+User also finds folds in Vim interesting and is interested in learning more advanced Vim techniques.
+[LESS_THAN]/context[GREATER_THAN]
