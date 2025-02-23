@@ -43,7 +43,7 @@ const experiences: Experience[] = [
     description: "full stack",
     location: "sf",
     tools: ["python", "typescript"],
-    companyLogo: "/images/openai.png",
+    companyLogo: "/images/openai.jpg",
     logoClassName: "invert dark:invert-0",
   },
   {
