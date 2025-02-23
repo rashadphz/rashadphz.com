@@ -36,7 +36,7 @@ type Experience = {
 
 const experiences: Experience[] = [
   {
-    duration: "current",
+    duration: "now",
     company: "OpenAI",
     role: "member of technical staff",
     companyUrl: "https://openai.com",
