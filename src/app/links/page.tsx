@@ -3,6 +3,9 @@ import { supabase } from "@/lib/supabase";
 import { z } from "zod";
 import SearchableLinks from "@/components/searchable-links";
 
+// Revalidate every eight hours (~3 times per day)
+export const revalidate = 60 * 60 * 8;
+
 const linkSchema = z.object({
   url: z.string().url(),
   title: z.string(),
