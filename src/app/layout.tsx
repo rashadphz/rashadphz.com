@@ -53,8 +53,7 @@ export default function RootLayout({
       <body
         className={cn(
           "min-h-screen bg-background antialiased",
-          //   GeistSans.className,
-          lausanne.className,
+          mono.className,
           mono.variable
         )}
       >
