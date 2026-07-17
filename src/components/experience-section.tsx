@@ -136,7 +136,7 @@ const ExperienceSection = () => {
                       <span className="text-sm group-hover:text-primary/90">
                         {company}
                       </span>
-                      <span className="text-xs text-muted-foreground font-bold font-mono tracking-tighter">
+                      <span className="text-xs text-muted-foreground font-mono tracking-tighter">
                         {role}
                       </span>
                     </div>
