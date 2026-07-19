@@ -52,7 +52,7 @@ const ProjectsSection = () => {
                   </div>
                 )}
               </div>
-              <div className="text-xxs text-muted-foreground lowercase font-mono font-bold">
+              <div className="text-xxs text-muted-foreground lowercase font-mono">
                 {project.description}
               </div>
               <div className="flex flex-row space-x-3 items-center mt-2">

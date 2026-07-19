@@ -37,7 +37,7 @@ export type Tool = keyof typeof toolIconMap;
 export const ToolBadge = ({ tool }: { tool: Tool }) => {
   const Icon = toolIconMap[tool];
   return (
-      <span className="items-center px-1 py-0.5 font-semibold rounded-md text-[0.60rem] font-mono border-border border text-foreground bg-[#FBF7F5] dark:bg-[#201C1A]">
+      <span className="items-center px-1 py-0.5 font-semibold rounded-md text-xxs font-mono border-border border text-foreground bg-[#FBF7F5] dark:bg-[#201C1A]">
       <Icon />
       <span className="ml-2 capitalize">{tool}</span>
     </span>

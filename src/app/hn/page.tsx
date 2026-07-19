@@ -79,7 +79,7 @@ export default async function HackerNews() {
     <Base>
       <div className="flex flex-col">
         <div className="space-y-1 mb-6">
-          <h2 className="text-2xl font-bold ">Favorite HN Posts</h2>
+          <h2 className="text-lg font-semibold">Favorite HN Posts</h2>
           <p>
             All the posts that I&apos;ve upvoted on{" "}
             <Link href="https://news.ycombinator.com/">Hacker News</Link>.
