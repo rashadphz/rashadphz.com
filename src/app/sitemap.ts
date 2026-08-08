@@ -1,10 +1,10 @@
 import { MetadataRoute } from "next";
-import { allPosts } from "contentlayer/generated";
+import { publishedPosts } from "@/lib/posts";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const siteUrl = "https://www.rashadphz.com";
 
-  const postRoutes = allPosts.map((post) => ({
+  const postRoutes = publishedPosts.map((post) => ({
     url: `${siteUrl}/writing/${post.slug}`,
     lastModified: post.date,
   }));

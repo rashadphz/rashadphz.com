@@ -12,8 +12,7 @@ export default function Base({ children }: { children: React.ReactNode }) {
           </Link>
           <div className="flex space-x-3">
             <Link href="/links">links</Link>
-            <Link href="/writing">writing</Link>
-            <Link href="/resume.pdf">resume</Link>
+            <Link href="/writing">notes</Link>
           </div>
         </header>
         <div className="mt-2" />

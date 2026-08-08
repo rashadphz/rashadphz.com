@@ -13,7 +13,7 @@ export default function Favicon({ url, title }: FaviconProps) {
       <Image
         src={`https://www.google.com/s2/favicons?domain=${url}&sz=32`}
         alt=""
-        className="w-4 h-4 rounded-sm"
+        className="mt-0.5 w-4 h-4 shrink-0 rounded-sm"
         width={16}
         height={16}
         onError={(e) => {
@@ -24,11 +24,11 @@ export default function Favicon({ url, title }: FaviconProps) {
         }}
       />
       <div 
-        className="hidden w-4 h-4 bg-amber-900 text-white text-[10px] items-center justify-center rounded-sm"
+        className="hidden mt-0.5 w-4 h-4 shrink-0 bg-accent-foreground text-white text-[10px] items-center justify-center rounded-sm"
         aria-hidden="true"
       >
         {title.charAt(0)}
       </div>
     </>
   );
-} 
+}

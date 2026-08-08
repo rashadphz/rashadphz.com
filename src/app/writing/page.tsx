@@ -1,12 +1,12 @@
 import { FC } from "react";
-import { allPosts } from "contentlayer/generated";
 import Base from "@/layouts/base";
 import Link from "@/components/link";
+import { publishedPosts } from "@/lib/posts";
 
 interface BlogPageProps {}
 
 const BlogPage: FC<BlogPageProps> = () => {
-  const posts = allPosts;
+  const posts = publishedPosts;
   return (
     <Base>
       <div className="flex flex-col">

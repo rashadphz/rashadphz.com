@@ -1,11 +1,11 @@
-import { allPosts } from "contentlayer/generated";
 import Link from "./link";
+import { publishedPosts } from "@/lib/posts";
 
 const BlogSection = () => {
-  const posts = allPosts;
+  const posts = publishedPosts;
   return (
     <div>
-      <h3 className="text-lg font-semibold">writing</h3>
+      <h3 className="text-lg font-semibold">notes</h3>
       <div className="mt-3 flex flex-col">
         <ul className="not-prose space-y-4">
           {posts.map((post) => (

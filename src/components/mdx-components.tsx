@@ -155,7 +155,7 @@ export function Mdx({ code }: MdxProps) {
   const Component = useMDXComponent(code);
 
   return (
-    <div className="mdx prose dark:prose-invert">
+    <div className="mdx prose prose-sm dark:prose-invert max-w-none">
       <Component components={components} />
     </div>
   );

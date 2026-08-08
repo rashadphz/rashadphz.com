@@ -4,18 +4,21 @@ import ProjectsSection from "@/components/projects-section";
 import WavingHand from "@/components/waving-hand";
 import Base from "@/layouts/base";
 import AnimatedSection from "@/components/animated-section";
+import Link from "@/components/link";
 
 export default function Home() {
   return (
     <>
       <Base>
         <main>
-            <p>
-              hey, i&apos;m <strong>rashad</strong> <WavingHand />
-              <br />
-              I love building products / features with <strong>llms</strong>.
-              <br />
-            </p>
+          <p>
+            hey, i&apos;m <strong>rashad</strong> <WavingHand />
+            <br />
+            I&apos;m currently working on product/infra at OpenAI, and recently
+            shipped{" "}
+            <Link href="https://openai.com/chatgpt-work/">ChatGPT Work</Link>!
+            <br />
+          </p>
           <AnimatedSection className="mt-12" delay={0.1}>
             <ExperienceSection />
           </AnimatedSection>

@@ -25,7 +25,7 @@ export function Video({ src, caption, ...props }: VideoProps) {
         playsInline
         loop
         muted
-        className="my-1 rounded-xl border border-accent-foreground/10 cursor-zoom-in"
+        className="my-1 rounded-xl border border-accent-foreground/10 cursor-zoom-in max-w-full"
         src={src}
         onClick={handleVideoClick}
       />

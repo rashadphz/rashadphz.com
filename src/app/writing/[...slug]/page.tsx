@@ -1,7 +1,8 @@
 import { format, parseISO } from "date-fns";
-import { allPosts } from "contentlayer/generated";
+import { notFound } from "next/navigation";
 import { Mdx } from "@/components/mdx-components";
 import Base from "@/layouts/base";
+import { publishedPosts } from "@/lib/posts";
 import "@/styles/mdx.css";
 
 interface PostPageProps {
@@ -10,20 +11,20 @@ interface PostPageProps {
   };
 }
 export const generateStaticParams = async () => {
-  return allPosts.map((post) => ({
+  return publishedPosts.map((post) => ({
     slug: post.slugAsParams.split("/"),
   }));
 };
 
 async function getPostFromParams(params: PostPageProps["params"]) {
   const slug = params?.slug?.join("/");
-  const post = allPosts.find((post) => post.slugAsParams === slug);
+  const post = publishedPosts.find((post) => post.slugAsParams === slug);
   return post;
 }
 
 export default async function PostPage({ params }: PostPageProps) {
   const post = await getPostFromParams(params);
-  if (!post) throw new Error(`Post not found for slug: ${params.slug}`);
+  if (!post) notFound();
 
   return (
     <Base>

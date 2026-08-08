@@ -23,13 +23,13 @@
     --ring: 240 5.9% 10%;
     --radius: 0.5rem;
 
-    --accent: 24.6 42.7% 98%;
-    --accent-foreground: 28.6 42.7% 42%;
+    --accent: 142 30% 96%;
+    --accent-foreground: 145 48% 30%;
 
-    --dark-green: #3fa56f;
+    --dark-green: #24613f;
 
-    --tan: #e8d5c4;
-    --brown: #a6896a;
+    --tan: #dce9df;
+    --brown: #2f6b48;
   }
   .dark {
     --background: 0 0% 10%;
@@ -50,8 +50,8 @@
     --muted: 180 2.17% 18%;
     --muted-foreground: 216 12% 84%;
 
-    --accent: 22 25% 14%;
-    --accent-foreground: 22 32% 42%;
+    --accent: 145 24% 15%;
+    --accent-foreground: 142 42% 52%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
@@ -61,9 +61,9 @@
     --ring: 212.7 26.8% 83.9%;
     --black-or-white: 255;
 
-    --dark-green: #0b3820;
-    --tan: #8a6240;
-    --brown: #4d2d18;
+    --dark-green: #123b27;
+    --tan: #476b55;
+    --brown: #173d29;
 
     --code-background: #101010;
 

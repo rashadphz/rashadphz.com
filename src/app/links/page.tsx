@@ -1,28 +1,34 @@
 import Base from "@/layouts/base";
-import { supabase } from "@/lib/supabase";
-import { z } from "zod";
 import Link from "@/components/link";
 import Favicon from "@/components/favicon";
+import { getNotionLinks } from "@/lib/notion";
 
-// Revalidate every eight hours (~3 times per day)
-export const revalidate = 60 * 60 * 8;
+export const revalidate = 60 * 2;
 
-const linkSchema = z.object({
-  url: z.string().url(),
-  title: z.string(),
-  created_at: z.string(),
-});
-
-type LinkType = z.infer<typeof linkSchema>;
+type LinkType = {
+  url: string;
+  title: string;
+  createdAt?: string;
+};
 
 async function getLinks(): Promise<LinkType[]> {
-  const { data, error } = await supabase
-    .from("links")
-    .select("title, url, created_at")
-    .order("created_at", { ascending: false })
+  const notionLinks = await getNotionLinks();
 
-  if (error) throw error;
-  return data.map((link) => linkSchema.parse(link));
+  const links = new Map<string, LinkType>();
+
+  for (const link of notionLinks ?? []) {
+    links.set(link.url, {
+      url: link.url,
+      title: link.title ?? new URL(link.url).hostname.replace(/^www\./, ""),
+      createdAt: link.createdAt,
+    });
+  }
+
+  return Array.from(links.values()).sort((a, b) => {
+    const aTime = a.createdAt ? new Date(a.createdAt).getTime() : 0;
+    const bTime = b.createdAt ? new Date(b.createdAt).getTime() : 0;
+    return bTime - aTime;
+  });
 }
 
 export default async function LinksPage() {
@@ -34,21 +40,21 @@ export default async function LinksPage() {
         <div className="space-y-1 mb-6">
           <h2 className="text-lg font-semibold">links</h2>
           <span className="text-sm">
-            Things I&apos;ve found interesting on the internet.
+            some things I&apos;ve found interesting
           </span>
         </div>
         <ul className="space-y-1">
           {links.map((link) => (
             <li key={link.url}>
               <Link href={link.url} className="no-underline" hideArrow>
-                <div className="items-center gap-2 flex-col bg-transparent hover:bg-muted/80 p-1 rounded-md transition-[background-color] duration-300">
-                  <div className="flex items-center gap-2">
-                    <Favicon url={link.url} title={link.title} />
-                    <div className="no-underline text-sm">{link.title}</div>
-                  </div>
-                  <div className="hidden sm:block text-xxs text-muted-foreground font-mono">
-                    [{new URL(link.url).host.replace(/^www\./, "")}]
-                  </div>
+                <div className="flex items-start gap-2 bg-transparent hover:bg-muted/80 px-1 py-0.5 rounded-md transition-[background-color] duration-300">
+                  <Favicon url={link.url} title={link.title} />
+                  <span className="min-w-0 text-xs leading-5 break-words">
+                    <span>{link.title}</span>
+                    <span className="hidden sm:inline ml-2 text-xxs text-muted-foreground font-mono">
+                      [{new URL(link.url).host.replace(/^www\./, "")}]
+                    </span>
+                  </span>
                 </div>
               </Link>
             </li>
