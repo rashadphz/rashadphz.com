@@ -4,13 +4,14 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme-provider";
 import { GeistSans } from "geist/font/sans";
-import { JetBrains_Mono as Mono } from "next/font/google";
+import { IBM_Plex_Mono as Mono } from "next/font/google";
 import localFont from "next/font/local";
 
 const mono = Mono({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-mono",
+  weight: ["400", "500", "600", "700"],
 });
 
 const lausanne = localFont({
