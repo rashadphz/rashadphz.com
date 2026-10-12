@@ -76,7 +76,17 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground text-base;
+    font-weight: 450;
+  }
+  strong, b {
+    font-weight: 550;
+  }
+  em {
+    @apply font-serif;
+    font-size: 1.16em;
+    font-weight: 400;
+    line-height: 1;
   }
 }
 html,
@@ -87,11 +97,5 @@ body {
 }
 
 html {
-  font-size: 15px;
-}
-
-@media (min-width: 640px) {
-  html {
-    font-size: 16px;
-  }
+  font-size: 16px;
 }

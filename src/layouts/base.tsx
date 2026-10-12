@@ -1,16 +1,15 @@
 import Footer from "@/components/footer";
 import Link from "@/components/link";
-import ToggleThemeButton from "@/components/toggle-theme-button";
 
 export default function Base({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <div className="mx-auto max-w-3xl p-4">
+      <div className="mx-auto max-w-[582px] p-4">
         <header className="flex justify-between items-center h-20 py-8">
-          <Link className="no-underline font-bold" href="/">
+          <Link className="no-underline font-medium" href="/">
             rashadphz
           </Link>
-          <div className="flex space-x-3">
+          <div className="flex space-x-3 text-xs">
             <Link href="/links">links</Link>
             <Link href="/writing">notes</Link>
           </div>

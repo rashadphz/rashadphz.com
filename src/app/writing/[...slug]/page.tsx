@@ -30,10 +30,10 @@ export default async function PostPage({ params }: PostPageProps) {
     <Base>
       <article className="">
         <div className="mb-8 text-left">
-          <h1 className="text-2xl sm:text-3xl font-semibold">{post.title}</h1>
+          <h1 className="text-sm font-medium">{post.title}</h1>
           <time
             dateTime={post.date}
-            className="block text-sm text-muted-foreground"
+            className="mt-1 block text-xs text-muted-foreground"
           >
             {format(parseISO(post.date), "LLLL d, yyyy")}
           </time>

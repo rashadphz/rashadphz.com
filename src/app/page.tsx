@@ -16,7 +16,9 @@ export default function Home() {
             <br />
             I&apos;m currently working on product/infra at OpenAI, and recently
             shipped{" "}
-            <Link href="https://openai.com/chatgpt-work/">ChatGPT Work</Link>!
+            <Link href="https://openai.com/chatgpt-work/" className="whitespace-nowrap">
+              <em>ChatGPT Work</em>
+            </Link>!
             <br />
           </p>
           <AnimatedSection className="mt-12" delay={0.1}>
