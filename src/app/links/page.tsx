@@ -38,7 +38,7 @@ export default async function LinksPage() {
     <Base>
       <div className="flex flex-col">
         <div className="space-y-1 mb-6">
-          <h2 className="text-lg font-semibold">links</h2>
+          <h2 className="text-sm font-medium">links</h2>
           <span className="text-sm">
             some things I&apos;ve found interesting
           </span>

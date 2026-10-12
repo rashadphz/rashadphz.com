@@ -11,13 +11,13 @@ module.exports = {
   theme: {
   	fontSize: {
   		xxs: '0.75rem',
-  		xs: '0.875rem',
-  		sm: '1rem',
-  		base: '1.125rem',
-  		lg: '1.25rem',
-  		xl: '1.5rem',
-  		'2xl': '1.75rem',
-  		'3xl': '2rem',
+      xs: ['0.8125rem', { lineHeight: '1.25rem' }],
+      sm: ['0.875rem', { lineHeight: '1.5' }],
+      base: ['0.875rem', { lineHeight: '1.5' }],
+      lg: '1rem',
+      xl: '1.125rem',
+      '2xl': '1.25rem',
+      '3xl': '1.5rem',
   		'4xl': '2.5rem',
   		'5xl': '3.25rem',
   		'6xl': '4.25rem'
@@ -32,15 +32,26 @@ module.exports = {
   	extend: {
   		fontFamily: {
   			sans: [
-  				'var(--font-geist-sans)'
+          'var(--font-sans)', 'system-ui', 'sans-serif'
   			],
+        serif: ['var(--font-serif)', 'Georgia', 'serif'],
   			mono: [
   				'var(--font-mono)'
   			]
   		},
+      fontWeight: {
+        medium: '550'
+      },
   		typography: {
   			DEFAULT: {
   				css: {
+            fontSize: '0.875rem',
+            lineHeight: '1.5',
+            'h1, h2, h3, h4': {
+              fontSize: '1em',
+              fontWeight: '550',
+              lineHeight: '1.5'
+            },
   					a: {
   						color: 'hsl(var(--primary))',
   						textDecorationColor: 'hsl(var(--accent-foreground))',
@@ -49,7 +60,7 @@ module.exports = {
   							textDecorationColor: 'hsl(var(--primary))'
   						},
   						textUnderlineOffset: '0.2em',
-  						textDecorationThickness: '3px'
+              textDecorationThickness: '1px'
   					}
   				}
   			}

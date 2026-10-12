@@ -35,7 +35,7 @@ const ProjectsSection = () => {
 
   return (
     <div>
-      <h3 className="text-lg font-semibold">projects</h3>
+      <h3 className="text-sm font-medium">projects</h3>
       <div className="mt-3 grid grid-cols-1 md:grid-cols-2 gap-4">
         {projects.map((project, idx) => (
           <NextLink href={project.link} target="_blank" key={idx}>
@@ -52,7 +52,7 @@ const ProjectsSection = () => {
                   </div>
                 )}
               </div>
-              <div className="text-xxs text-muted-foreground lowercase font-mono">
+              <div className="text-xs text-muted-foreground lowercase">
                 {project.description}
               </div>
               <div className="flex flex-row space-x-3 items-center mt-2">
@@ -70,4 +70,3 @@ const ProjectsSection = () => {
 };
 
 export default ProjectsSection;
-

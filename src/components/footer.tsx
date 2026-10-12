@@ -11,7 +11,7 @@ export default function Footer() {
   return (
     <div>
       <Separator />
-      <footer className="flex justify-between items-center h-8 py-8">
+      <footer className="flex justify-between items-center h-8 py-8 text-xs text-muted-foreground">
         <span>Rashad Philizaire</span>
         <div className="flex space-x-3 items-center">
           <Link href="https://github.com/rashadphz">

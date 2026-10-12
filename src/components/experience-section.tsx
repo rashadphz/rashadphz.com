@@ -39,7 +39,7 @@ const experiences: Experience[] = [
 const ExperienceSection = () => {
   return (
     <div className="">
-      <h3 className="text-lg font-semibold">experience</h3>
+      <h3 className="text-sm font-medium">experience</h3>
       <div className="mt-3 w-full divide-y divide-slate-200 dark:divide-neutral-800">
         {experiences.map(
           ({ company, duration, companyLogo, logoClassName }) => (
@@ -59,7 +59,7 @@ const ExperienceSection = () => {
                 </div>
                 <span className="text-sm">{company}</span>
               </div>
-              <span className="text-sm text-muted-foreground">{duration}</span>
+              <span className="text-xs text-muted-foreground">{duration}</span>
             </div>
           )
         )}
